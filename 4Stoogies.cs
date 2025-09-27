@@ -14,11 +14,11 @@ public interface ISpinBot
     void Run();
 }
 
-public class 4Stoogies : Bot, ISpinBot
+public class fourStoogies : Bot, ISpinBot
 {
     static void Main(string[] args)
     {
-        new 4Stoogies().Start();
+        new fourStoogies().Start();
     }
     public override void Run()
     {
