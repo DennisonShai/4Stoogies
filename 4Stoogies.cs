@@ -18,7 +18,7 @@ public class 4Stoogies : Bot, ISpinBot
 {
     static void Main(string[] args)
     {
-        new SpinBot().Start();
+        new 4Stoogies().Start();
     }
     public override void Run()
     {
