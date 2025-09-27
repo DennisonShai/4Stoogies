@@ -1,0 +1,17 @@
+{
+  "name": "4Stoogies",
+  "version": "1.0",
+  "authors": [
+    "Teleki Shai",
+    "Kutlwano Thaga",
+    "Lethabo Khalo",
+    "Nthabeleng Mathabathe"
+  ],
+  "description": "A bot that combines what we like from various bots and addresses their issues",
+  "homepage": "",
+  "countryCodes": [
+    "sa"
+  ],
+  "platform": ".Net 6.0",
+  "programmingLang": "C# 10.0"
+}
