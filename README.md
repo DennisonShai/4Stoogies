@@ -1,4 +1,4 @@
-# 4Stoogies
+# fourStoogies
 This is for the coding of our EPSZA-MathU Hackathon.
 We found usefulness in the spin, fir, trackfire, and borderguard bots but they each had issues we dont necessarily like.
 they waste energy by hitting walls(spin and borderguard), firing too much(fire and trackfire), and become easy targets while shooting(trackfire)

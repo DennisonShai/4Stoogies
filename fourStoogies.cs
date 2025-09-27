@@ -27,10 +27,10 @@ public class fourStoogies : Bot, ISpinBot
         RadarColor = Color.Pink;
         ScanColor = Color.Black;
 
-       
+
         while (IsRunning)
         {
-            
+
             SetTurnRight(10_000);
             // move faaaaaaaaaaaaast
             MaxSpeed = 10;
@@ -38,10 +38,10 @@ public class fourStoogies : Bot, ISpinBot
         }
     }
 
-   
 
-   
-   //shoots rammed bot
+
+
+    //shoots rammed bot
     public override void OnHitBot(HitBotEvent e)
     {
         var bearing = BearingTo(e.X, e.Y);
@@ -54,31 +54,33 @@ public class fourStoogies : Bot, ISpinBot
             TurnRight(10);
         }
     }
-};
 
 
 
-public override void OnScannedBot(ScannedBotEvent e)
-{
-    // finds bot
-    var bearingFromGun = GunBearingTo(e.X, e.Y);
 
-    // turn toward target
-    TurnGunLeft(bearingFromGun);
-
-    //fires if near
-    var distance = DistanceTo(e.X, e.Y);
-    if (distance < 50)
+    public override void OnScannedBot(ScannedBotEvent e)
     {
-        Fire(2);
+        // finds bot
+        var bearingFromGun = GunBearingTo(e.X, e.Y);
+
+        // turn toward target
+        TurnGunLeft(bearingFromGun);
+
+        //fires if near
+        var distance = DistanceTo(e.X, e.Y);
+        if (distance < 50)
+        {
+            Fire(2);
+        }
+        else
+        {
+            // Otherwise, only fire 1
+            Fire(1);
+        }
+        if (bearingFromGun == 0)
+            Rescan();
+
+        ;
     }
-    else
-    {
-        // Otherwise, only fire 1
-        Fire(1);
-    }
-    if (bearingFromGun == 0)
-        Rescan();
 
 }
-
