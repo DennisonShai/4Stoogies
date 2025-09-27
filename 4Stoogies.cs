@@ -14,7 +14,7 @@ public interface ISpinBot
     void Run();
 }
 
-public class SpinBot : Bot, ISpinBot
+public class 4Stoogies : Bot, ISpinBot
 {
     static void Main(string[] args)
     {
@@ -32,17 +32,16 @@ public class SpinBot : Bot, ISpinBot
         {
             
             SetTurnRight(10_000);
-            // Limit our speed to 5
-            MaxSpeed = 5;
-            // Start moving (and turning)
+            // move faaaaaaaaaaaaast
+            MaxSpeed = 10;
             Forward(10_000);
         }
     }
 
    
 
-    // We hit another bot -> if it's our fault, we'll stop turning and moving,
-    // so we need to turn again to keep spinning.
+   
+   //shoots rammed bot
     public override void OnHitBot(HitBotEvent e)
     {
         var bearing = BearingTo(e.X, e.Y);
@@ -61,13 +60,13 @@ public class SpinBot : Bot, ISpinBot
 
 public override void OnScannedBot(ScannedBotEvent e)
 {
-    // Calculate direction of the scanned bot and bearing to it for the gun
+    // finds bot
     var bearingFromGun = GunBearingTo(e.X, e.Y);
 
-    // Turn the gun toward the scanned bot
+    // turn toward target
     TurnGunLeft(bearingFromGun);
 
-    // If it is close enough, fire!
+    //fires if near
     var distance = DistanceTo(e.X, e.Y);
     if (distance < 50)
     {
@@ -82,10 +81,4 @@ public override void OnScannedBot(ScannedBotEvent e)
         Rescan();
 
 }
-public override void OnScannedBot(ScannedBotEvent e)
-{
-    //fires hard at nearby enemies
-    
-    // Rescan
-    Rescan();
-}
+
